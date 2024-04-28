@@ -10,8 +10,6 @@ public class Menu : MonoBehaviour
 
     void Update()
     {
-
-        //Wenn man auf den Start-Button drückt, soll das Menü deaktiviert werden
         if (StartButton.startGame)
         {
             menu.SetActive(false);

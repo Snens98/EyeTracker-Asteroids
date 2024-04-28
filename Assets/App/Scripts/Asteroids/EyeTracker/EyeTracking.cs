@@ -38,11 +38,6 @@ public class EyeTracking : MonoBehaviour, IGazeFocusable
         velocity = GameObject.Find("Cube(Clone)").GetComponent<move>().velocity;
         rb = GetComponent<Rigidbody>();
 
-
-        // Transparenz des Materials setzen
-       // highlightColor.a = colorAlpha;
-
-
         //Auf das Outline-Script von QuickOutline zugreifen
         outline = gameObject.GetComponent<Outline>();
 

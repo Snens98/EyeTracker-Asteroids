@@ -13,20 +13,14 @@ public class Hitbox : MonoBehaviour
     //Was passieren soll, wenn ein Asteroid mit der Kollisionsbox des Spieles kollidiert
     private void OnTriggerEnter(Collider other)
     {
-
-
         red.SetActive(true);
-
         SoundhasPlayed = false;
-
         playSound(clip);                //Sound abspielen
 
 
         //Asteroid zerstören
         //createField.asteroidList.Remove(other.gameObject);
         //Destroy(other.gameObject);
-
-
 
         //Leben reduzieren
         int modi = Spielmodi.spielmodi > -1 ? Spielmodi.spielmodi : 0;

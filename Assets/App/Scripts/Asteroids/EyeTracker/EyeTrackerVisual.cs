@@ -9,10 +9,6 @@ public class EyeTrackerVisual : MonoBehaviour
     public GameObject visual;
     public Toggle toggle;
 
-
-
-    //Eye-Tracker nur visualisieren, wenn der Eye-Tracker-Modus
-    //ausgewählt ist und man die visualisierung aktiviert hat
     void Update()
     {
 

@@ -10,9 +10,6 @@ public class Spielmodi : MonoBehaviour
     public TextMeshPro DropDown;
     public static int spielmodi = 0;
 
-
- 
-    //Wenn man im Dropdown-Menü den Spielmodus ändert, wird hier der Spielmodus gesetzt
     public void bla(int val)
     {
         //Eye Tracker

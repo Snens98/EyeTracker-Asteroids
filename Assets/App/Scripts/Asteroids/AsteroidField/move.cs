@@ -65,26 +65,14 @@ public class move : MonoBehaviour
 
     void Start()
     {
-        // Wenn Asteroiden 0 - 200 Einheiten hinter der Kamera verschwinden, sollen sie verschoben werden
         rp = Random.Range(0, 100);
-
-        //Zufällige Roation zwischen 2 Werten für die Asteroiden festlegen
         RotationSpeed = Random.Range(minRotationSpeed, maxRotationSpeed);
-
-        //Zufällige Geschwindigkeit zwischen 2 Werten für die Asteroiden festlegen
         velocity = Random.Range(minVelocity, maxVelocity);
-
-        //Auf den Rigidbody der Asteroiden zugreifen, um ihnen einen Start-Impuls zu geben
         rb = GetComponent<Rigidbody>();
-
-        //Vektor, der vom Asteroiden zur Kamera zeigt
         Vector3 forceVec = Camera.main.transform.position - this.transform.position;
-
-        //Wohin der Asteroid fliegen soll
         forceVec = forceVec + new Vector3(Random.Range(-targetRadius, targetRadius),
             Random.Range(-targetRadius, targetRadius), Random.Range(-targetRadius, targetRadius));
 
-        //Asteroid bekommt einen Impuls, um sich zu bewegen
         rb.AddForce(Vector3.Normalize(forceVec) * velocity, ForceMode.Impulse);
     }
 
@@ -95,14 +83,8 @@ public class move : MonoBehaviour
 
     void Update()
     {
-
-        // Die Asteroiden bekommt ihre Rotation
         this.transform.Rotate(Vector3.up, RotationSpeed * Time.deltaTime);
-
-
-        // Asteroiden neu setzen, wenn sie hinter der Kamera verschwinden
         replaceAsteroid((this.transform.position.z + rp) < Camera.main.transform.position.z);
-
 
         //Wenn die Geschwindigkeit zu klein ist z.B nach einer Kollision, wird der Asteroid entfert.
         //checkVelocity();
@@ -162,8 +144,6 @@ public class move : MonoBehaviour
     //Asteroid an einer neuen zufälligen Position setzen
     public void replaceAsteroid(bool b)
     {
-
-        //Auf die Variablen aus dem createField-Script zugreifen
         int fov = GameObject.Find("AsteroidField").GetComponent<createField>().fov;
         int minRadius = GameObject.Find("AsteroidField").GetComponent<createField>().minRadius;
         int maxRadius = GameObject.Find("AsteroidField").GetComponent<createField>().maxRadius;

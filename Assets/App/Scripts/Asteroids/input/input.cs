@@ -10,7 +10,6 @@ public class input : MonoBehaviour
 
     public GameObject red; 
 
-    // Hier kann auf die Inputs zugegriffen werden
     public static bool isTriggerRightPressed = false;   //Der Trigger-Button am rechten Kontroller
     public static bool isTriggerLeftPressed = false;    //Der Trigger-Button am linken Kontroller
 

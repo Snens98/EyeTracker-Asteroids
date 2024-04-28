@@ -6,14 +6,8 @@ public class Reset : MonoBehaviour
 { 
     public GameObject asteroid;
     public GameObject asteroidField;
-
-
     public static bool reset = false;
 
-
-
-    //Wenn man auf Start klickt, werden die Skripte Move und createField neu geladen,
-    //um das eingestellte Schwierigkeitslevel zu laden
     void Update()
     {
         if (reset)
